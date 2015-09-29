@@ -1,5 +1,5 @@
 function __create_repo_by_rpms() {
-    yum install -y createrepo
+    zypper -n install createrepo
     local old_dir=`pwd`
     cd $TOPDIR/
     mkdir -p /tmp/debs/

@@ -11,13 +11,11 @@ URL:              http://intel.com
 Source0:          vsm-%{version}.tar.gz
 
 BuildArch:        noarch
-BuildRequires:    MySQL-python
-BuildRequires:    python-importlib
-BuildRequires:    python-ordereddict
+BuildRequires:    python-mysql
 BuildRequires:    python-pbr
 BuildRequires:    python-decorator
 BuildRequires:    python-tempita
-BuildRequires:    python-sqlalchemy0.7
+BuildRequires:    python-SQLAlchemy
 BuildRequires:    python-amqplib
 BuildRequires:    python-anyjson
 BuildRequires:    python-argparse
@@ -25,12 +23,11 @@ BuildRequires:    python-eventlet
 BuildRequires:    python-kombu
 BuildRequires:    python-lockfile
 BuildRequires:    python-lxml
-BuildRequires:    python-routes1.12
+BuildRequires:    python-Routes
 BuildRequires:    python-webob
 BuildRequires:    python-greenlet
-BuildRequires:    python-paste-deploy1.5
+BuildRequires:    python-PasteDeploy
 BuildRequires:    python-paste
-BuildRequires:    python-migrate
 BuildRequires:    python-stevedore
 BuildRequires:    python-suds
 BuildRequires:    python-paramiko
@@ -38,16 +35,14 @@ BuildRequires:    python-babel
 BuildRequires:    python-iso8601
 BuildRequires:    python-keystoneclient
 BuildRequires:    python-oslo-config
-BuildRequires:    numpy
+BuildRequires:    python-numpy
 BuildRequires:    python-psutil
 
-Requires:    MySQL-python
-Requires:    python-importlib
-Requires:    python-ordereddict
+Requires:    python-mysql
 Requires:    python-pbr
 Requires:    python-decorator
 Requires:    python-tempita
-Requires:    python-sqlalchemy0.7
+Requires:    python-SQLAlchemy
 Requires:    python-amqplib
 Requires:    python-anyjson
 Requires:    python-argparse
@@ -55,12 +50,11 @@ Requires:    python-eventlet
 Requires:    python-kombu
 Requires:    python-lockfile
 Requires:    python-lxml
-Requires:    python-routes1.12
+Requires:    python-Routes
 Requires:    python-webob
 Requires:    python-greenlet
-Requires:    python-paste-deploy1.5
+Requires:    python-PasteDeploy
 Requires:    python-paste
-Requires:    python-migrate
 Requires:    python-stevedore
 Requires:    python-suds
 Requires:    python-paramiko
@@ -68,12 +62,11 @@ Requires:    python-babel
 Requires:    python-iso8601
 Requires:    python-keystoneclient
 Requires:    python-oslo-config
-Requires:    numpy
+Requires:    python-numpy
 Requires:    ceph
-Requires:    btrfs-progs
+Requires:    btrfsprogs
 Requires:    xfsprogs
 Requires:    python-psutil
-Requires:    mod_ssl
 
 %description
 Intel VSM Storage System.
@@ -86,10 +79,9 @@ Group:            Documentation
 Requires:         %{name} = %{version}-%{release}
 BuildRequires:    graphviz
 BuildRequires:    python-eventlet
-BuildRequires:    python-routes
-BuildRequires:    python-sqlalchemy0.7
+BuildRequires:    python-Routes
+BuildRequires:    python-SQLAlchemy
 BuildRequires:    python-webob
-BuildRequires:    python-migrate
 BuildRequires:    python-iso8601
 
 %description      doc

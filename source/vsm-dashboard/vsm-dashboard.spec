@@ -13,39 +13,37 @@ Summary:        web based management interface for VSM.
 BuildArch:      noarch
 BuildRequires:  python-devel
 BuildRequires:  python-setuptools
-BuildRequires:  MySQL-python
-BuildRequires:  python-django-compressor
-BuildRequires:  Django14
-BuildRequires:  python-django-openstack-auth
+BuildRequires:  python-mysql
+BuildRequires:  python-django_compressor
+BuildRequires:  python-Django
+BuildRequires:  python-django_openstack_auth
 BuildRequires:  python-netaddr
 BuildRequires:  python-keystoneclient
-BuildRequires:  pytz
+BuildRequires:  python-pytz
 BuildRequires:  python-lockfile
 
-Requires:    Django14
-Requires:    apr
-Requires:    apr-util
-Requires:    apr-util-ldap
-Requires:    httpd
-Requires:    httpd-tools
+Requires:    python-Django
+Requires:    libapr1
+Requires:    libapr-util1
+Requires:    apache2
+Requires:    apache2-utils
 Requires:    mod_wsgi
-Requires:    pyparsing
+Requires:    python-pyparsing
 Requires:    python-argparse
-Requires:    python-backports
-Requires:    python-backports-ssl_match_hostname
+Requires:    python-backports.ssl_match_hostname
 Requires:    python-chardet
 Requires:    python-cliff
 Requires:    python-cmd2
 Requires:    python-django-appconf
-Requires:    python-django-compressor
-Requires:    python-django-horizon
-Requires:    python-django-openstack-auth
+Requires:    python-django_compressor
+Requires:    python-django_openstack_auth
+Requires:    python-horizon
 Requires:    python-httplib2
 Requires:    python-iso8601
 Requires:    python-jsonschema
 Requires:    python-keyring
 Requires:    python-keystoneclient
-Requires:  python-netaddr
+Requires:    python-netaddr
 Requires:    python-ordereddict
 Requires:    python-oslo-config
 Requires:    python-prettytable
@@ -75,8 +73,8 @@ rm -rf %{buildroot}
 # httpd Configuration file
 #---------------------------
 
-install -d -m 755 %{buildroot}%{_sysconfdir}/httpd/conf.d
-install -p -D -m 755 tools/vsm-dashboard.conf %{buildroot}%{_sysconfdir}/httpd/conf.d/vsm-dashboard.conf
+install -d -m 755 %{buildroot}%{_sysconfdir}/apache2/conf.d
+install -p -D -m 755 tools/vsm-dashboard.conf %{buildroot}%{_sysconfdir}/apache2/conf.d/vsm-dashboard.conf
 
 
 #---------------------------
@@ -113,22 +111,21 @@ install -p -D -m 755 manage.py %{buildroot}%{_datadir}/vsm-dashboard/
 #python -m dashboard.manage syncdb
 
 mkdir -p %{_sysconfdir}/vsm-dashboard
-chown -R apache:apache %{_sysconfdir}/vsm-dashboard
+chown -R wwwrun:www %{_sysconfdir}/vsm-dashboard
 rm -rf %{_sysconfdir}/vsm-dashboard/*
 ln -sf %{_datadir}/vsm-dashboard/vsm_dashboard/local/local_settings.py %{_sysconfdir}/vsm-dashboard/local_settings
 
 chmod -R a+r %{_datadir}/vsm-dashboard
-chown -R apache:apache %{_datadir}/vsm-dashboard
-chown -R apache:apache %{_sysconfdir}/vsm-dashboard
-chown -R apache:apache %{_sysconfdir}/httpd/conf.d/vsm-dashboard.conf
+chown -R wwwrun:www %{_datadir}/vsm-dashboard
+chown -R wwwrun:www %{_sysconfdir}/vsm-dashboard
 
 VSM_VERSION=%{version}-%{release}
 sed -i "s,%VSM_VERSION%,$VSM_VERSION,g" %{_datadir}/vsm-dashboard/vsm_dashboard/dashboards/vsm/overview/summarys.py
 
 %files
 %defattr(-,root,root,-)
-%dir %{_sysconfdir}/httpd/conf.d
-%config(noreplace) %attr(-, root, apache) %{_sysconfdir}/httpd/conf.d/vsm-dashboard.conf
+%dir %{_sysconfdir}/apache2/conf.d
+%config(noreplace) %attr(-, root, apache) %{_sysconfdir}/apache2/conf.d/vsm-dashboard.conf
 
 %dir %{_bindir}
 %config(noreplace) %attr(-, root, apache) %{_bindir}/lessc

@@ -5,7 +5,7 @@ function _get_vsmdeploy_version() {
 }
 
 function _install_vsmdeploy_dep_package() {
-    yum install -y rpm-build
+    zypper -n install rpm-build
 }
 
 function _setup_vsmdeploy_rpm() {
