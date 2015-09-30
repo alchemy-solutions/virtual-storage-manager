@@ -37,6 +37,7 @@ __EOF__
     # Waits forever, so it's fairly pointless
     # rabbitmqctl wait /var/run/rabbitmq/pid
 
+    sleep 3
     rabbitmqctl status > /dev/null
     while [ "$?" -ne 0 ] 
     do
