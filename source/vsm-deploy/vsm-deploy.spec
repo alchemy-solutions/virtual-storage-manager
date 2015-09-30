@@ -124,6 +124,7 @@ exit 0
 %attr(-, root, root) %{_usr}/bin/vsm-controller
 %attr(-, root, root) %{_usr}/bin/restart-all
 %attr(-, root, root) %{_usr}/bin/replace-str
+%attr(-, root, root) %{_bindir}/add_disk
 %attr(-, root, root) %{_usr}/bin/sync-code
 %attr(-, root, root) %{_usr}/bin/vsm-node
 %attr(-, root, root) %{_usr}/bin/clean-data
@@ -149,6 +150,7 @@ exit 0
 %config(noreplace) %attr(-, root, vsm) %{_usr}/local/bin/vsm-controller
 %config(noreplace) %attr(-, root, vsm) %{_usr}/local/bin/restart-all
 %config(noreplace) %attr(-, root, vsm) %{_usr}/local/bin/replace-str
+%config(noreplace) %attr(-, root, vsm) %{_usr}/local/bin/add_disk
 %config(noreplace) %attr(-, root, vsm) %{_usr}/local/bin/sync-code
 %config(noreplace) %attr(-, root, vsm) %{_usr}/local/bin/vsm-node
 %config(noreplace) %attr(-, root, vsm) %{_usr}/local/bin/clean-data
