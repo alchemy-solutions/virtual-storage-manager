@@ -21,7 +21,7 @@
 @vsm_version=rpm -qa |grep vsm
 @rpm_list=rpm -qa
 /etc/hosts
-@ipaddress=hostname -I
+@ipaddress=hostname -i
 @ifconfiginfo=ifconfig
 @host_name=hostname
 @http_proxy=echo http_proxy=$http_proxy

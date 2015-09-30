@@ -97,8 +97,8 @@ TOPDIR=$(cd $(dirname "$0") && pwd)
 TEMP=`mktemp`; rm -rfv $TEMP >/dev/null; mkdir -p $TEMP;
 
 HOSTNAME=`hostname`
-#HOSTIP=`hostname -I|sed s/[[:space:]]//g`
-HOSTIP=`hostname -I`
+#HOSTIP=`hostname -i|sed s/[[:space:]]//g`
+HOSTIP=`hostname -i`
 PATH_N="/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin"
 
 source $TOPDIR/installrc

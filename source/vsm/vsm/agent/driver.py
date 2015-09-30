@@ -1932,7 +1932,7 @@ class CephDriver(object):
 
     def get_osds_status(self):
         args = ['ceph', 'osd', 'dump', '-f', 'json']
-        #args = ['hostname', '-I']
+        #args = ['hostname', '-i']
         #(out, _err) = utils.execute(*args)
         (out, _err) = utils.execute(*args, run_as_root=True)
         if out != "":

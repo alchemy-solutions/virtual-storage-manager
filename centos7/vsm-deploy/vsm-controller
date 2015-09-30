@@ -223,7 +223,7 @@ function set_password {
 # Controller
 #---------------------------------------------
 
-#HOST_IP=`hostname -I | awk '{print $1}'`
+#HOST_IP=`hostname -i | awk '{print $1}'`
 HOST_IP=`getip`
 VSM_CONTROLLER_IP=${VSM_CONTROLLER_IP:-$HOST_IP}
 

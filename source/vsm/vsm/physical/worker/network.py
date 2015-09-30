@@ -29,5 +29,5 @@ class NetworkWorker(object):
         pass
 
     def get_ips(self):
-        (out, err) = utils.execute('hostname', '-I')
+        (out, err) = utils.execute('hostname', '-i')
         return out.split()

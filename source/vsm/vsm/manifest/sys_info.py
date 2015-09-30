@@ -37,7 +37,7 @@ def get_hostname():
 def get_local_ip():
     """Return the ip address."""
     #TODO use python code to get ip address.
-    ip_list = os.popen("hostname -I").read().strip()
+    ip_list = os.popen("hostname -i").read().strip()
     return ip_list.replace(' ', ',')
 
 def get_rsa_key():

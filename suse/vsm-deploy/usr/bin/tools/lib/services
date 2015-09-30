@@ -8,7 +8,7 @@ function is_service_enabled() {
     fi
     local cnt=0
     local _host=$1
-    for n in `hostname -I`; do
+    for n in `hostname -i`; do
         if [[ $_host == $n ]]; then
             let cnt=cnt+1
         fi

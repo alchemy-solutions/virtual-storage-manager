@@ -166,7 +166,7 @@ class ManifestChecker(object):
         for _lan in lan_list:
             self.__is_address_ok(_lan)
 
-        out = utils.execute('hostname', '-I')
+        out = utils.execute('hostname', '-i')
         ip_list = out[0].strip().split()
 
         for ip in ip_list:

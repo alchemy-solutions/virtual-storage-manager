@@ -21,7 +21,7 @@ uname -a;uname
 rpm -qa |grep vsm;vsm_version
 rpm -qa;rpm_list
 /etc/hosts
-hostname -I;ipaddress
+hostname -i;ipaddress
 ifconfig;ifconfiginfo
 hostname;host_name
 echo http_proxy=$http_proxy;proxy1
