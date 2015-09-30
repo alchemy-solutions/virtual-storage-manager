@@ -38,13 +38,13 @@ class GetIp(object):
             for item in addlist:
                 self.ip_list.append(item[4][0])
         except:
-            addlist = os.popen('hostname -I').read().split()
+            addlist = os.popen('hostname -i').read().split()
             for item in addlist:
                 self.ip_list.append(item)
 
         #get ip from fcntl
-        #get ip from "hostname -I"
-        ip = os.popen('hostname -I').read().split()
+        #get ip from "hostname -i"
+        ip = os.popen('hostname -i').read().split()
         self.ip_list = list(set(self.ip_list + ip))
 
     def get_local_ip(self, ifname):

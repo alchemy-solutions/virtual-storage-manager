@@ -285,7 +285,7 @@ class ManifestChecker(object):
         if False == self.__in_lan(ip):
             error('Controller ip is not in lan!')
 
-        out = utils.execute('hostname', '-I')
+        out = utils.execute('hostname', '-i')
         ip_list = out[0].strip().split()
         ip_in_lan_cnt = 0
         ip_in_lan = []

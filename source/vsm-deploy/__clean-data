@@ -25,7 +25,7 @@ service vsm-physical stop
 TOPDIR=$(cd $(dirname "$0") && pwd)
 
 function is_controller() {
-    ip_list=`hostname -I`
+    ip_list=`hostname -i`
     if [[ ! -e /etc/vsmdeploy/deployrc ]]; then
         echo 0
         return
