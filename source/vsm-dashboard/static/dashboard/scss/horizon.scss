@@ -92,7 +92,7 @@ dt {
   //  +vertical($body-bg, $gray-lighter);
   //}
   border-bottom: 1px solid $gray-light;
-  padding: 10px 0px 15px 0px;
+  padding: 10px 0px 35px 0px;
 }
 
 .topbar .switcher_bar {
@@ -193,12 +193,12 @@ h2 {
 /* Login Splash Page */
 
 #splash .login {
-  background: url(../img/logo-splash.png) no-repeat center 35px;
+  background: url(../img/logo-splash.png) no-repeat center 5px;
   position: absolute;
   top: 80px;
   left: 50%;
   margin: 0 0 0 -195px;
-  padding-top: 170px;
+  padding-top: 300px;
   width: 390px;
   border: 1px solid $border-color;
   max-height: none;
