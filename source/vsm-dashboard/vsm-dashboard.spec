@@ -125,26 +125,26 @@ sed -i "s,%VSM_VERSION%,$VSM_VERSION,g" %{_datadir}/vsm-dashboard/vsm_dashboard/
 %files
 %defattr(-,root,root,-)
 %dir %{_sysconfdir}/apache2/conf.d
-%config(noreplace) %attr(-, root, apache) %{_sysconfdir}/apache2/conf.d/vsm-dashboard.conf
+%config(noreplace) %attr(-, root, www) %{_sysconfdir}/apache2/conf.d/vsm-dashboard.conf
 
 %dir %{_bindir}
-%config(noreplace) %attr(-, root, apache) %{_bindir}/lessc
+%config(noreplace) %attr(-, root, www) %{_bindir}/lessc
 
-%dir %attr(0755, apache, apache) %{_libdir}/less
+%dir %attr(0755, wwwrun, www) %{_libdir}/less
 %{_libdir}/less/*
 
-%dir %attr(0755, apache, apache) %{_datadir}/vsm-dashboard
+%dir %attr(0755, wwwrun, www) %{_datadir}/vsm-dashboard
 %{_datadir}/vsm-dashboard/*
-%config(noreplace) %attr(-, apache, apache) %{_datadir}/vsm-dashboard/vsm_dashboard/local/local_settings.py
-#%dir %attr(0755, apache, apache) %{_datadir}/vsm-dashboard/vsm_dashboard
+%config(noreplace) %attr(-, wwwrun, www) %{_datadir}/vsm-dashboard/vsm_dashboard/local/local_settings.py
+#%dir %attr(0755, wwwrun, www) %{_datadir}/vsm-dashboard/vsm_dashboard
 #%{_datadir}/vsm-dashboard/vsm_dashboard/*
 
-#%dir %attr(0755, apache, apache) %{_datadir}/vsm-dashboard/static
+#%dir %attr(0755, wwwrun, www) %{_datadir}/vsm-dashboard/static
 #%{_datadir}/vsm-dashboard/static/*
-#%config(noreplace) %attr(-, root, apache) %{_datadir}/vsm-dashboard/manage.py
+#%config(noreplace) %attr(-, root, www) %{_datadir}/vsm-dashboard/manage.py
 
-#%dir %attr(0755, apache, apache) %{_sysconfdir}/vsm-dashboard/
-#%config(noreplace) %attr(-, root, apache) %{_sysconfdir}/vsm-dashboard/local_settings
+#%dir %attr(0755, wwwrun, www) %{_sysconfdir}/vsm-dashboard/
+#%config(noreplace) %attr(-, root, www) %{_sysconfdir}/vsm-dashboard/local_settings
 
 #%{_sysconfdir}/vsm-dashboard/*
 
