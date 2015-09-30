@@ -49,6 +49,6 @@ mkdir -p vsmrepo
 
 cp ~/rpmbuild/RPMS/noarch/python-vsmclient-$VSMCLIENT_VERSION-$RELEASE.noarch.rpm vsmrepo/
 cp ~/rpmbuild/RPMS/noarch/vsm-$VSM_VERSION-$RELEASE.noarch.rpm vsmrepo/
-cp ~/rpmbuild/RPMS/noarch/vsm-deploy-$VSM_DEPLOY_VERSION-$RELEASE.noarc.rpm vsmrepo/
+cp ~/rpmbuild/RPMS/noarch/vsm-deploy-$VSM_DEPLOY_VERSION-$RELEASE.noarch.rpm vsmrepo/
 cp ~/rpmbuild/RPMS/x86_64/vsm-dashboard-$VSM_DASHBOARD_VERSION-$RELEASE.x86_64.rpm vsmrepo/
 
